@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1.0">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.90"
+        android:orientation="horizontal"
+        android:weightSum="1" >
+
+		<Button
+		    android:id="@+id/tens"
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.2"
+		    android:text="0">
+
+		</Button>
+		<Button
+		    android:id="@+id/ones"
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.2"
+		    android:text="0" >
+
+		</Button>
+
+		<Button
+		    android:id="@+id/dimes"
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.2"
+		    android:text="0" >
+
+		</Button>
+		<Button
+		    android:id="@+id/cents"
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.2"
+		    android:text="0" >
+
+		</Button>
+
+		<Button
+		    android:id="@+id/paybutton"
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.2"
+		    android:text="Pay." >
+
+		</Button>
+
+	</LinearLayout>
+    <ProgressBar
+		android:id="@+id/moneybar"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.10"
+        
+        android:max="100"
+        android:progress="75" />
+
+</LinearLayout>
