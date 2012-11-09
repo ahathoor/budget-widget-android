@@ -61,8 +61,8 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="0.10"
-        
         android:max="100"
-        android:progress="75" />
+        android:progress="75" 
+        style="?android:attr/progressBarStyleHorizontal"/>
 
 </LinearLayout>
