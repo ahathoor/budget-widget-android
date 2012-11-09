@@ -41,10 +41,6 @@ public class BudgetWidgetProvider extends AppWidgetProvider{
             views.setOnClickPendingIntent(R.id.cents, centsPending);
             views.setOnClickPendingIntent(R.id.paybutton, payPending);
 
-		//set the progress bar to match set parameters		
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-		
-
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
