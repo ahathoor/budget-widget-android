@@ -17,7 +17,7 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
-		    android:text="0">
+		    android:text="@string/tens">
 
 		</Button>
 		<Button
@@ -25,7 +25,7 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
-		    android:text="0" >
+		    android:text="@string/ones" >
 
 		</Button>
 
@@ -34,7 +34,7 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
-		    android:text="0" >
+		    android:text="@string/dimes" >
 
 		</Button>
 		<Button
@@ -42,7 +42,7 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
-		    android:text="0" >
+		    android:text="@string/cents" >
 
 		</Button>
 

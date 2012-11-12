@@ -5,6 +5,8 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 
 public class BudgetWidgetProvider extends AppWidgetProvider{
@@ -15,34 +17,14 @@ public class BudgetWidgetProvider extends AppWidgetProvider{
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            // Create an Intent to launch ExampleActivity
-            Intent tensIntent = new Intent(context, WidgetActionHandlerActivity.class);
-            Intent onesIntent = new Intent(context, WidgetActionHandlerActivity.class);
-            Intent dimesIntent = new Intent(context, WidgetActionHandlerActivity.class);
-            Intent centsIntent = new Intent(context, WidgetActionHandlerActivity.class);
-            Intent payIntent = new Intent(context, WidgetActionHandlerActivity.class);
-            tensIntent.putExtra("action", "increase_tens");
-            onesIntent.putExtra("action", "increase_ones");
-            dimesIntent.putExtra("action", "increase_dimes");
-            centsIntent.putExtra("action", "increase_cents");
-            payIntent.putExtra("action", "pay");
-            PendingIntent tensPending = PendingIntent.getActivity(context, 0, tensIntent, 0);
-            PendingIntent onesPending = PendingIntent.getActivity(context, 0, onesIntent, 0);
-            PendingIntent dimesPending = PendingIntent.getActivity(context, 0, dimesIntent, 0);
-            PendingIntent centsPending = PendingIntent.getActivity(context, 0, onesIntent, 0);
-            PendingIntent payPending = PendingIntent.getActivity(context, 0, payIntent, 0);
-
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widgetlayout);
-            views.setOnClickPendingIntent(R.id.tens, tensPending);
-            views.setOnClickPendingIntent(R.id.ones, onesPending);
-            views.setOnClickPendingIntent(R.id.dimes, dimesPending);
-            views.setOnClickPendingIntent(R.id.cents, centsPending);
-            views.setOnClickPendingIntent(R.id.paybutton, payPending);
-
-		//set the progress bar to match set parameters		
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            views.setOnClickPendingIntent(R.id.tens, WidgetActionHandlerService.makeControlPendingIntent(context, "increase tens", appWidgetId));
+//            views.setOnClickPendingIntent(R.id.ones, onesPending);
+//            views.setOnClickPendingIntent(R.id.dimes, dimesPending);
+//            views.setOnClickPendingIntent(R.id.cents, centsPending);
+//            views.setOnClickPendingIntent(R.id.paybutton, payPending);
 		
 
             // Tell the AppWidgetManager to perform an update on the current app widget

@@ -4,5 +4,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_budget">BudgetActivity</string>
+    <string name="tens">0</string>
+    <string name="ones">0</string>
+    <string name="dimes">0</string>
+    <string name="cents">0</string>
 
 </resources>

@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <service android:name=".WidgetActionHandlerService" >
+        </service>
 
         <receiver android:name=".BudgetWidgetProvider" >
             <intent-filter>
