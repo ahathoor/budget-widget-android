@@ -1,5 +1,7 @@
 package com.example.budgetflow;
 
+import java.util.Calendar;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -39,36 +41,55 @@ public class WidgetActionHandlerService extends Service {
         int dimes = preferences.getInt("dimes", 0);
         int cents = preferences.getInt("cents", 0);
         
+    	float daily_allowance = preferences.getFloat("daily allowance", 10);
+    	Calendar c = Calendar.getInstance();
+    	int year = c.get(Calendar.YEAR);
+    	int month = c.get(Calendar.MONTH);
+    	int day = c.get(Calendar.DAY_OF_MONTH);
+    	String date = year + "\\" + month + "\\" + day;
+    	float payments_today = preferences.getFloat(date, 0);
+        
         if (command == "increase tens") {
         	tens++;
         	if (tens > 9) tens = 0;
-        	editor.putInt("tens", tens);
         }
         if (command == "increase ones") {
         	ones++;
         	if (ones > 9) ones = 0;
-        	editor.putInt("ones",ones);
         }
         if (command == "increase dimes") {
         	dimes++;
         	if (dimes > 9) dimes = 0;
-        	editor.putInt("dimes", dimes);
         }
         if (command == "increase cents") {
         	cents+=5;
         	if (cents > 9) cents = 0;
-        	editor.putInt("cents", cents);
         }
         
+        if(command == "register payment") {
+        	float payment_total = tens*10 + ones + (float)dimes/10 + (float)cents/100;
+        	payments_today += payment_total;
+        	tens = 0;
+        	ones = 0;
+        	dimes = 0;
+        	cents = 0;
+        }
+
+    	editor.putFloat(date, payments_today);
+    	editor.putInt("tens", tens);
+    	editor.putInt("ones",ones);
+    	editor.putInt("dimes", dimes);
+    	editor.putInt("cents", cents);
         editor.commit();
-		
 		
 		views.setCharSequence(R.id.tens, "setText", "" + tens);
 		views.setCharSequence(R.id.ones, "setText", "" + ones);
 		views.setCharSequence(R.id.dimes, "setText", "" + dimes);
 		views.setCharSequence(R.id.cents, "setText", "" + cents);
-		
-		views.setInt(R.id.moneybar, "setProgress", 50);
+
+		views.setInt(R.id.moneybar, "setMax", (int) (daily_allowance*100));
+		views.setInt(R.id.moneybar, "setProgress", (int) ((daily_allowance - payments_today)*100));
+		views.setCharSequence(R.id.progressText, "setText", Math.rint(((daily_allowance-payments_today)*100))/100 + "\\" + daily_allowance);
   		aw.updateAppWidget(widgetId, views);
 
 		Log.v("XX", "Handler launched");

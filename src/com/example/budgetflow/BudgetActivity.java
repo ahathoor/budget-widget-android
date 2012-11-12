@@ -19,7 +19,8 @@ public class BudgetActivity extends Activity {
         TextView tw = (TextView)findViewById(R.id.hello);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor prefEditor = preferences.edit();
-        prefEditor.putInt("money", 50);
+        prefEditor.clear();
+        prefEditor.putFloat("daily allowance", 10);
         prefEditor.commit();
         
     }
