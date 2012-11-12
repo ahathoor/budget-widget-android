@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg"
+    android:background="@drawable/appwidget_dark_bg"
     android:orientation="vertical"
-    android:padding="0dip"
+	android:padding="4dp"
     android:weightSum="1.0" >
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.2"
-            android:background="#00000000"
+            android:background="@drawable/appwidget_dark_bg_clickable"
             android:text="@string/tens"
             android:textSize="50dp" >
         </Button>
@@ -29,7 +29,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.2"
-            android:background="#00000000"
+            android:background="@drawable/appwidget_dark_bg_clickable"
             android:text="@string/ones"
             android:textSize="50dp" >
         </Button>
@@ -47,7 +47,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.15"
-            android:background="#00000000"
+            android:background="@drawable/appwidget_dark_bg_clickable"
             android:text="@string/dimes"
             android:textSize="50dp" >
         </Button>
@@ -57,7 +57,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.15"
-            android:background="#00000000"
+            android:background="@drawable/appwidget_dark_bg_clickable"
             android:text="@string/cents"
             android:textSize="50dp" >
         </Button>
@@ -67,10 +67,11 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.25"
-            android:background="#00000000"
-            android:paddingBottom="10dp"
-            android:text=">"
-            android:textSize="50dp" >
+            android:background="@drawable/appwidget_dark_bg_clickable"
+            android:layout_margin="8dp"
+            android:text="Pay"
+            android:textStyle="italic"
+            android:textSize="30dp" >
         </Button>
     </LinearLayout>
 
