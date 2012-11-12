@@ -10,6 +10,7 @@
         android:layout_height="0dip"
         android:layout_weight="0.90"
         android:orientation="horizontal"
+        android:background="#000000"
         android:weightSum="1" >
 
 		<Button
@@ -17,6 +18,8 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
+			android:background="#00000000"
+			android:textSize="50dp"
 		    android:text="@string/tens">
 
 		</Button>
@@ -25,15 +28,27 @@
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
 		    android:layout_weight="0.2"
+			android:background="#00000000"
+			android:textSize="50dp"
 		    android:text="@string/ones" >
 
 		</Button>
+		<TextView
+		    android:layout_width="0dip"
+		    android:layout_height="fill_parent"
+		    android:textSize="50dp"
+		    android:layout_weight="0.05"
+		    android:text="." >
+
+		</TextView>
 
 		<Button
 		    android:id="@+id/dimes"
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
-		    android:layout_weight="0.2"
+		    android:layout_weight="0.15"
+			android:background="#00000000"
+			android:textSize="50dp"
 		    android:text="@string/dimes" >
 
 		</Button>
@@ -41,7 +56,9 @@
 		    android:id="@+id/cents"
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
-		    android:layout_weight="0.2"
+		    android:layout_weight="0.15"
+			android:background="#00000000"
+			android:textSize="50dp"
 		    android:text="@string/cents" >
 
 		</Button>
@@ -50,8 +67,12 @@
 		    android:id="@+id/paybutton"
 		    android:layout_width="0dip"
 		    android:layout_height="fill_parent"
-		    android:layout_weight="0.2"
-		    android:text="Pay." >
+		    android:layout_weight="0.25"
+		    android:layout_margin="5dp"
+		    android:paddingBottom="10dp"
+			android:background="#00000000"
+			android:textSize="50dp"
+		    android:text=">" >
 
 		</Button>
 

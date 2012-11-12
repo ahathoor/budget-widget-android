@@ -11,6 +11,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.util.Log;
 import android.view.Menu;
@@ -28,7 +29,45 @@ public class WidgetActionHandlerService extends Service {
 				.getInstance(getApplicationContext());
 		RemoteViews views = new RemoteViews(getApplicationContext()
 				.getPackageName(), R.layout.widgetlayout);
-		views.setCharSequence(R.id.tens, "setText", "9");
+		
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Editor editor = preferences.edit();
+        
+        int tens = preferences.getInt("tens", 0);
+        int ones = preferences.getInt("ones", 0);
+        int dimes = preferences.getInt("dimes", 0);
+        int cents = preferences.getInt("cents", 0);
+        
+        if (command == "increase tens") {
+        	tens++;
+        	if (tens > 9) tens = 0;
+        	editor.putInt("tens", tens);
+        }
+        if (command == "increase ones") {
+        	ones++;
+        	if (ones > 9) ones = 0;
+        	editor.putInt("ones",ones);
+        }
+        if (command == "increase dimes") {
+        	dimes++;
+        	if (dimes > 9) dimes = 0;
+        	editor.putInt("dimes", dimes);
+        }
+        if (command == "increase cents") {
+        	cents+=5;
+        	if (cents > 9) cents = 0;
+        	editor.putInt("cents", cents);
+        }
+        
+        editor.commit();
+		
+		
+		views.setCharSequence(R.id.tens, "setText", "" + tens);
+		views.setCharSequence(R.id.ones, "setText", "" + ones);
+		views.setCharSequence(R.id.dimes, "setText", "" + dimes);
+		views.setCharSequence(R.id.cents, "setText", "" + cents);
+		
 		views.setInt(R.id.moneybar, "setProgress", 50);
   		aw.updateAppWidget(widgetId, views);
 

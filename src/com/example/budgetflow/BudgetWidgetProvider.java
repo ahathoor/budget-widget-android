@@ -21,10 +21,10 @@ public class BudgetWidgetProvider extends AppWidgetProvider{
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widgetlayout);
             views.setOnClickPendingIntent(R.id.tens, WidgetActionHandlerService.makeControlPendingIntent(context, "increase tens", appWidgetId));
-//            views.setOnClickPendingIntent(R.id.ones, onesPending);
-//            views.setOnClickPendingIntent(R.id.dimes, dimesPending);
-//            views.setOnClickPendingIntent(R.id.cents, centsPending);
-//            views.setOnClickPendingIntent(R.id.paybutton, payPending);
+            views.setOnClickPendingIntent(R.id.ones, WidgetActionHandlerService.makeControlPendingIntent(context, "increase ones", appWidgetId));
+            views.setOnClickPendingIntent(R.id.dimes, WidgetActionHandlerService.makeControlPendingIntent(context, "increase dimes", appWidgetId));
+            views.setOnClickPendingIntent(R.id.cents, WidgetActionHandlerService.makeControlPendingIntent(context, "increase cents", appWidgetId));
+            views.setOnClickPendingIntent(R.id.paybutton, WidgetActionHandlerService.makeControlPendingIntent(context, "register payment", appWidgetId));
 		
 
             // Tell the AppWidgetManager to perform an update on the current app widget
