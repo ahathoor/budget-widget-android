@@ -16,7 +16,6 @@ public class BudgetActivity extends Activity {
         super.onCreate(savedInstanceState);
 		Log.v("XX", "Mainwindow launched");
         setContentView(R.layout.activity_budget);
-        TextView tw = (TextView)findViewById(R.id.hello);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor prefEditor = preferences.edit();
         prefEditor.clear();
