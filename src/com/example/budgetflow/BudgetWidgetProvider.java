@@ -1,6 +1,7 @@
 package com.example.budgetflow;
 
 import android.app.PendingIntent;
+import android.app.PendingIntent.CanceledException;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -27,6 +28,14 @@ public class BudgetWidgetProvider extends AppWidgetProvider{
             views.setOnClickPendingIntent(R.id.paybutton, WidgetActionHandlerService.makeControlPendingIntent(context, "register payment", appWidgetId));
 		
 
+            //Send an update notification to the action handler
+            PendingIntent in = WidgetActionHandlerService.makeControlPendingIntent(context, "update", appWidgetId);
+            try {
+				in.send();
+			} catch (CanceledException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
