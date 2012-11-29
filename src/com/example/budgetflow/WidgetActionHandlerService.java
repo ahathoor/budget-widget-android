@@ -25,6 +25,7 @@ import android.widget.TextView;
 public class WidgetActionHandlerService extends Service {
 
 	public void onStart(Intent intent, int startId) {
+		Log.v("BF", "Handler Launched");
 		String command = intent.getAction();
 		int widgetId = intent.getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID);
 		AppWidgetManager aw = AppWidgetManager

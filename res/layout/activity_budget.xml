@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/allowanceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -12,21 +12,8 @@
         android:layout_marginTop="18dp"
         android:text="Your daily allowance:" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:ems="10"
-        android:inputType="numberDecimal" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/okbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -35,40 +22,47 @@
         android:text="ok" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/todayYouHaveSpent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/dailyEdit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="25dp"
         android:text="Today you have spent:" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <EditText
+        android:id="@+id/dailyEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/allowanceText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/todaySpentDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/todayYouHaveSpent"
         android:text="n euros"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/thusFarSaved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_below="@+id/todaySpentDisplay"
         android:text="Thus far you have saved:" />
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/thusfarSavedDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/TextView01"
-        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/thusFarSaved"
         android:text="n euros"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
