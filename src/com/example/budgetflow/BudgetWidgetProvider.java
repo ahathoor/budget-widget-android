@@ -5,9 +5,6 @@ import android.app.PendingIntent.CanceledException;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 
 public class BudgetWidgetProvider extends AppWidgetProvider{
@@ -18,8 +15,8 @@ public class BudgetWidgetProvider extends AppWidgetProvider{
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            // Get the layout for the App Widget and attach an on-click listener
-            // to the button
+            // Get the layout for the App Widget and attach on-click listeners
+            // to the buttons
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widgetlayout);
             views.setOnClickPendingIntent(R.id.tens, WidgetActionHandlerService.makeControlPendingIntent(context, "increase tens", appWidgetId));
             views.setOnClickPendingIntent(R.id.ones, WidgetActionHandlerService.makeControlPendingIntent(context, "increase ones", appWidgetId));

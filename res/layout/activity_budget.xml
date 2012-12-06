@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="Your daily allowance:" />
+        android:text="Your daily budget:" />
 
     <Button
         android:id="@+id/okbutton"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dailyEdit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="18dp"
         android:text="Today you have spent:" />
 
     <EditText
@@ -50,19 +50,19 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/thusFarSaved"
+        android:id="@+id/thisMonthSpent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/todaySpentDisplay"
-        android:text="Thus far you have saved:" />
+        android:text="This month you have spent:" />
 
     <TextView
-        android:id="@+id/thusfarSavedDisplay"
+        android:id="@+id/thisMonthSpentDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/thusFarSaved"
+        android:layout_below="@+id/thisMonthSpent"
         android:text="n euros"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

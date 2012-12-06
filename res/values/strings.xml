@@ -8,5 +8,7 @@
     <string name="ones">0</string>
     <string name="dimes">0</string>
     <string name="cents">0</string>
+    <string name="menu_clear">Clear all data</string>
+    <string name="clear_today">Clear today\'s data</string>
 
 </resources>
