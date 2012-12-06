@@ -10,5 +10,8 @@
     <string name="cents">0</string>
     <string name="menu_clear">Clear all data</string>
     <string name="clear_today">Clear today\'s data</string>
+    <string name="this_month_text">This month you have spent:</string>
+    <string name="today_spent_text">Today you have spent:</string>
+    <string name="daily_budget_text">Your daily budget:</string>
 
 </resources>

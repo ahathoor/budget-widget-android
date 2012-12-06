@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="Your daily budget:" />
+        android:text="@string/daily_budget_text" />
 
     <Button
         android:id="@+id/okbutton"
@@ -19,7 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="ok" />
+        android:text="" />
 
     <TextView
         android:id="@+id/todayYouHaveSpent"
@@ -28,7 +28,7 @@
         android:layout_below="@+id/dailyEdit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="Today you have spent:" />
+        android:text="@string/today_spent_text" />
 
     <EditText
         android:id="@+id/dailyEdit"
@@ -46,16 +46,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/todayYouHaveSpent"
-        android:text="n euros"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/thisMonthSpent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/todaySpentDisplay"
-        android:text="This month you have spent:" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/this_month_text" />
 
     <TextView
         android:id="@+id/thisMonthSpentDisplay"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/thisMonthSpent"
-        android:text="n euros"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
