@@ -1,5 +1,5 @@
-droid-reitti-widget
+budgeteer?
 ===================
 
-Android widgetti josta näkee helsingin julkisen liikenteen valitun yhteyden seuraavan 
-toteutumisajankohdan selkeänä countdown -laskurina tai kellonaikana.
+Android -widget that provides an interface to quickly input sums (of money) that are then
+subtracted from a daily total allowance and displayed.
